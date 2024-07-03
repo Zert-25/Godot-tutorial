@@ -1,11 +1,29 @@
 extends Node2D
 
 func _ready():
-	print("xd")
-
-
-
-
+	#region strings
+	var text = "thank you mario"
+	#print (text[1])
+	#text = text + ", but the princess in \"other\" casttle" #el \r permite el salto de linea en los string, el \t tabula el texto y el \" permite agregarle comillas al texto, por ultimo si colocas \\ permite colocar una linea en el texto
+	var name = text.get_slice(" ", 2) #get_slice permite extraer solo un trozo del texto
+	print(name)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+#region Programacion
 #region imprimir codigo
 #print("hello world") #asi se imprime hola mundo
 #endregion
@@ -163,6 +181,56 @@ func _ready():
 			#break #con el break el bucle se terminara de forma inmediata una vez se cumpla la condicion
 		#print(i)
 	#print("game over")
+	#endregion	
+#region arrays y sus metodos
+	#var inventory = []
+	#inventory = ["potion"]
+	#inventory.append("herbs") #el .append se utiliza para agregar nuevos elementos a un array
+	#var loot = ["potion","weapon","shield"]
+	#inventory.append_array(loot) #el _array permite traspasar los elementos de un aray a otro
+	#loot.reverse() #el .reverse invierte el orden de los elementos de un array
+	#loot.sort() # el .sort ordena los elementos de un array en orden ascendente
+	#loot.shuffle() # el .shuffle ordena los elementos de un array en orden aleatorio
+	#loot.clear() # el .clear elimina todos los elementos del array dejandolo vacio
+	#for object in inventory:
+		#print(object)
+	#for position in inventory.size(): #el .size nos permite remplazar algun elemento del array por uno nuevo
+		#if inventory[position] == "potion":
+			#inventory[position] = "empty potion"
+		#elif inventory[position] == "herbs":
+			#inventory.remove_at(position) #el .remove_at permite eliminar un elemento del array
+	#inventory.insert(2, "lance") #el .insert permite remplzar un elemento del array por otro
+	#print(inventory.find("weapon")) #el .find nos dira en que pocision se encuentra un elemento en el array
+	#print(inventory.has("weapon")) # el .has nos dira si el arrray contiene el elemento que especificamos
+	#print(inventory)
+	#print(loot)
+	#endregion
+#region ejemplos de uso del array
+	#var inventory=[] #el inventario esta vacio
+	#var loot=["potion","weapon","shield"] #el pj encontro un cofre y lo quiere lootear
+	#loot.shuffle() #la recompensa del looteo es aleatoria
+	#inventory.append(loot[0]) #el primer elemento aleatorio se agregara al inventario
+	#loot.clear() # los elementos de la array loot se eliminan para no volver a lootear
+	#print(inventory) #se muestra el objeto que coniguio
+	#print(loot) #muestra como el cofre quedo vacio
+	#endregion
+#endregion
+#region POO
+#region diccionarios
+	#var inventory = {
+		#wood=5, #wood es la clave y el 5 es el valor de dicha clave
+		#herbs=24,
+		#"empty potion"=10 #si una clave requiere un espacio, toca escribirlo entre comillas
+		#}
+	#inventory.magic=["fire","water","earth","wind"]
+	#inventory.herbs+=1
+	#inventory.erase("wood") #el .erase elimina una clave del diccionario
+	 
+	#print(inventory["empty potion"]) #si la clave lleva comillas toca de esta forma
+	#print(inventory.herbs) # si la clave no lleva comillas se puede de esta forma
+	#for key in inventory.keys(): #por medio del .keys se puede acceder de manera mas optima a una clave del diccionario utilizando un bucle for
+		#print(key) # imprime las claves que contenga el diccionario
+		#print(inventory[key]) #imprime el valor que tiene el diccionario para dicha clave
 	#endregion
 	
 	
@@ -170,11 +238,7 @@ func _ready():
 	
 	
 	
-	
-	
-	
-	
-	
+
 	
 	
 	
