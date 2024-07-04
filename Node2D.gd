@@ -1,22 +1,13 @@
 extends Node2D
 
 func _ready():
-	#region strings
-	var text = "thank you mario"
-	#print (text[1])
-	#text = text + ", but the princess in \"other\" casttle" #el \r permite el salto de linea en los string, el \t tabula el texto y el \" permite agregarle comillas al texto, por ultimo si colocas \\ permite colocar una linea en el texto
-	var name = text.get_slice(" ", 2) #get_slice permite extraer solo un trozo del texto
-	print(name)
+	var text = "xd"
+	print_text(text)
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
+func print_text(text):
+	print(text)
 	
 	
 	
@@ -232,11 +223,86 @@ func _ready():
 		#print(key) # imprime las claves que contenga el diccionario
 		#print(inventory[key]) #imprime el valor que tiene el diccionario para dicha clave
 	#endregion
+#region strings y manipulacion de textos
+	#var text = "thank you mario"
+	#print (text[1])
+	#text = text + ", but the princess in \"other\" casttle" #el \r permite el salto de linea en los string, el \t tabula el texto y el \" permite agregarle comillas al texto, por ultimo si colocas \\ permite colocar una linea en el texto
+	#var name = text.get_slice(" ", 2) #get_slice permite extraer solo un trozo del texto
+	#print(name)
+	#var shard = text.split(" ") #el .split permite convertir una cadena de texto en un array, donde todos sus elementos son cada palabra la cual se encuentra separada entre espacios 
+	#print(shard)
+	#print(text.to_upper()) #el .to_upper permite convertir el texto a imprimir en mayuscula sostenida
+	#print(text.to_lower()) #el .to_lower permite convertir el texto a imprimir en minuscula sostenida
+	#text = text.replace("mario", "luigi") # el .replace permite reemplazar partes del texto por otros 
+	#con control + click izquierdo permite ver la documentacion del codigo
+	#endregion
+#region funciones, parametros y valor de retorno(return)
+	#var text="thank you mario"
+	#print(text)
+	#var name = "zert"
+	#var mens = game_over(name,"25") # de esta forma se llama la funcion para que se ejecute
+	#print(mens)
+#func game_over(name,points=0): # al colocarle el valor de cero permite que la funcion lo tome como un valor por defecto y se puede actualizar mas adelante 
+	#las funciones se pueen ver como un programa dentro de un programa mas grande, donde los parametros permiten especificar las tareas a realizar de dicha funcion
+	#var msm = "sorry, " + name + "."
+	#var point = "\nyou got: " + points
+	#return msm+point #el return permite que una vez se haya realizado un calculo complejo al final este solo devolvera su resultado
+	# un ejemplo es que en esta ocacion el codigo se ejecuta normal, y una vez llega a la funcion el return devuelve el msm+points lo que permite que se guarde en la variable mens y de esta forma se imprime con el print
+	#endregion
+#region buenas practicas y mas sobre funciones
+	#var name = "zert"
+	#var text = create_game_over(name,25) # de esta forma se llama la funcion para que se ejecute
+	#show_message(text)
+#func create_game_over(name,points=0): # al colocarle el valor de cero permite que la funcion lo tome como un valor por defecto y se puede actualizar mas adelante 
+	#las funciones se pueen ver como un programa dentro de un programa mas grande, donde los parametros permiten especificar las tareas a realizar de dicha funcion
+	#var msm = "sorry, " + name + "."
+	#var point = "\nyou got: " + str(points) # el str permite convertir un valor numerico a texto plano
+	#return msm+point #el return permite que una vez se haya realizado un calculo complejo al final este solo devolvera su resultado
+	# un ejemplo es que en esta ocacion el codigo se ejecuta normal, y una vez llega a la funcion el return devuelve el msm+points lo que permite que se guarde en la variable mens y de esta forma se imprime con el print
+	
+#func show_message(text):
+	#print(text)
+	#play_defeat_sound()
+	
+#func play_defeat_sound():
+	#pass # el pass permite que el programa pase de la funcion y continue con lo siguiente del codigo 
+	#endregion
+#region ambito de las variables y variables globales
+#var inventory = {wood=1,grass=3,stone=10} #las variables globales se encuentran por encima de todas las funciones con el fin de que todas las reconoscan como tal
+#func _ready():
 	
 	
+	#collect("grass")
+	#print(inventory)
 	
+#func collect(material,amount=1):
 	
+	#if inventory.has(material):
+		#inventory[material] += amount # las variables no se guardan entre funciones, por lo cual para este caso se necesita una variable global
+	#else:
+		#inventory[material] = amount
+#endregion
+#region argumentos
+	#var inventory = {wood=1,grass=3,stone=10}
+	#collect(inventory,"grass") #y en este caso luego se llama a la variable que va a ocupar el lugar del parametro
+	#print(inventory)
 	
+#func collect(inventory,material,amount=1): #los argumentos permiten utilizar variables locales en otras funciones al colocarlas como parametro
+	
+	#if inventory.has(material):
+		#inventory[material] += amount # las variables no se guardan entre funciones, por lo cual para este caso se necesita una variable global
+	#else:
+		#inventory[material] = amount
+	#endregion
+#region variables por valor o referencia
+	#var my_number=1
+	#my_number=modify(my_number)
+	#print(my_number)
+	
+#func modify(value):
+	#value += 3
+	#return value #de esta forma se puede modificar el valor de una variable de un tipo simple 
+	#endregion
 	
 
 	
