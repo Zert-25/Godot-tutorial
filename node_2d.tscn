@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://brq3tky41y16w"]
+[gd_scene load_steps=4 format=3 uid="uid://brq3tky41y16w"]
 
 [ext_resource type="Script" path="res://Node2D.gd" id="1_guxrl"]
+[ext_resource type="Texture2D" uid="uid://c3xh721lbxi47" path="res://icon.svg" id="2_xflj3"]
+[ext_resource type="Script" path="res://projectile.gd" id="3_7yfef"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_guxrl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(67, 291)
+texture = ExtResource("2_xflj3")
+script = ExtResource("3_7yfef")
